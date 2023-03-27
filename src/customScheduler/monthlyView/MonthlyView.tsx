@@ -11,6 +11,18 @@ interface Props {
   apiData: Array<ApiDataObject>;
   currentDay: Date;
 }
+/**
+ * Monthly view Parent component
+ *
+ * @description
+ * To achieve monthly view,
+ * A grid of 7 equal grid rows are created using MUI grid, each representing 7 days in a week starting from sunday,
+ * With 5 rows to accomodate 4 weeks +- few days of the month,
+ * All months will not have a perfect 4 weeks starting from sunday and ending on saturday,
+ * So @function fillMissingDaysInMonth is used to get the missing days from the start and end
+ * @param Props
+ * @returns Jsx Element
+ */
 
 const MonthlyView = ({ apiData, currentDay }: Props): JSX.Element => {
   const [monthDays, setmonthDays] = React.useState<Date[]>([]);

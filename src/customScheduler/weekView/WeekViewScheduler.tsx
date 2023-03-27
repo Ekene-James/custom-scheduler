@@ -12,7 +12,17 @@ interface Props {
   apiData: ApiDataObject[];
   currentDay: Date;
 }
-
+/**
+ * Parent component of the Weekly view
+ * @description
+ * For Table top that contains The day, date and month,
+ * Used @function daysOfThWeek(currentDay) to get array of dates
+ * starting from the current day passed from the date component,
+ * Then set this array to state.
+ *
+ * @param Props
+ * @returns Jsx Element
+ */
 function WeekViewScheduler({ apiData, currentDay }: Props) {
   const [weekDays, setweekDays] = React.useState<Date[]>([]);
 
@@ -21,7 +31,7 @@ function WeekViewScheduler({ apiData, currentDay }: Props) {
     <TableContainer component={Paper}>
       <Table
         sx={{ minWidth: 650, overflow: "hidden" }}
-        aria-label="simple table"
+        aria-label="week_view_table"
       >
         {weekDays?.length ? (
           <>

@@ -1,6 +1,12 @@
 import { Stack, Typography } from "@mui/material";
 import { daysFromSunday } from "utils/staticData";
-
+/**
+ * Top caption for days Monthly view
+ * @description
+ * Loops through daysFromSunday array and displays Sun,Mon,Tue, and e.t.c.
+ *
+ * @returns Jsx Element
+ */
 const TableTop = (): JSX.Element => {
   const todaysDate: Date = new Date();
 

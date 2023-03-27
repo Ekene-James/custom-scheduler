@@ -10,7 +10,15 @@ import { days, months } from "utils/staticData";
 interface Props {
   data: Date[];
 }
-
+/**
+ * Table Head component for weekly view
+ *
+ * @description
+ * Loop through the date array passed and display the day, date and month,
+ * Also highlight todays date
+ * @param Props
+ * @returns Jsx Element
+ */
 const TableTop = ({ data = [] }: Props) => {
   const today = new Date();
 

@@ -11,7 +11,16 @@ interface Props {
   time: TimeType;
   apiData: ApiDataObject[];
 }
-
+/**
+ * Row compoenet of the weekly view
+ *
+ * @description
+ * The first cell in the row displays the time from 'time' array,
+ * Each of the other seven takes weekdays corresponding to the position they are in the weekDays array
+ * coming from the parent component starting from 0, i.e. Sunday =0, Monday=1, etc.
+ * @param Props
+ * @returns Jsx Element
+ */
 const Row = ({ time, weekDays = [], apiData }: Props) => {
   return (
     <TableRow

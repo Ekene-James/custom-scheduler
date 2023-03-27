@@ -1,7 +1,11 @@
 import moment from "moment";
 import { ApiDataObject, TimeType } from "utils/types";
 import { borderTopColors, cellHeight, cellWidth } from "./staticData";
-
+/**
+ *
+ * @param currentdate
+ * @returns Array of dates
+ */
 export function daysOfThWeek(currentdate: Date = new Date()): Date[] {
   let week = [];
   const current = new Date(currentdate);

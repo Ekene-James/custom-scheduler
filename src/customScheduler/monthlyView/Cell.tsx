@@ -12,6 +12,18 @@ interface Props {
   apiData: Array<ApiDataObject>;
 }
 
+/**
+ * 
+ * The cell componet of the monthly view
+ * @description
+ * Used to display a scheduler for a particular day in a month,
+ * Used @function findDayInMonth to get the schedule that matches that day of the month, Note: they can be more than 1,
+ * Loop through them and display the names and pictures of those that has appointment,
+    Do so for the modal contents
+ * @param Props 
+ * @returns jsx Element
+ */
+
 const CellComponent = ({ weekDay, apiData }: Props): JSX.Element => {
   const modalRef = React.useRef<RefType>(null);
   const cellDays = findDayInMonth(apiData, weekDay);

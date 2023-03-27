@@ -9,7 +9,16 @@ interface Props {
   day: Date;
   apiData: ApiDataObject[];
 }
-
+/**
+ * Row Component of the Monthly View
+ * @description
+ * Use daysFromSunday array and api day to get the day the loop is currently on i.e if its sunday,monday or tuesday,
+ * Do same for Month using api month and months array,
+ * Display the date also
+ * If current loop is todays date, make every text bold.
+ * @param Props
+ * @returns Jsx Element
+ */
 const Row = ({ day, apiData }: Props): JSX.Element => {
   const todaysDate: Date = new Date();
 

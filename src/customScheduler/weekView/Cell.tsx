@@ -14,6 +14,18 @@ interface Props {
   time: TimeType;
   apiData: ApiDataObject[];
 }
+/**
+ * Cell component of the Weekly view
+ * @description
+ * Use @function findAppointmentDayAndTime (apiData, weekDay, time) to find
+ * The schedules for that day and their various times,
+ * Note that they could be more than 1, so loop and display all appointments
+ * with clients image and name,
+ * Do same for modal contents
+ *
+ * @param Props
+ * @returns Jsx Element
+ */
 
 const Cell = ({ weekDay, time, apiData }: Props) => {
   const modalRef = React.useRef<RefType>(null);
@@ -68,10 +80,7 @@ const Cell = ({ weekDay, time, apiData }: Props) => {
                 >
                   <img
                     alt="profile_img"
-                    src={
-                      dayDetails?.appointmentWithImg ||
-                      "/imgs/blank-profile-picture.png"
-                    }
+                    src={dayDetails.clientImg}
                     width={15}
                     height="15"
                     style={{
