@@ -1,25 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Paper, Stack } from "@mui/material";
+import Scheduler from "customScheduler/Scheduler";
+import { apiData } from "utils/dummyData";
+import DatePicker from "components/DatePicker";
+import CustomMenu from "components/CustomMenu";
+import { MenuItemType } from "utils/types";
+import "./App.css";
+const items: MenuItemType[] = [
+  {
+    name: "Day",
+    value: "Day",
+  },
+  {
+    name: "Week",
+    value: "Week",
+  },
+  {
+    name: "Month",
+    value: "Month",
+  },
+];
 function App() {
+  const [scheduleDate, setscheduleDate] = React.useState<Date>(new Date());
+  const [view, setview] = React.useState<MenuItemType>({
+    name: "Week",
+    value: "Week",
+  });
+  const onClickItem = (item: MenuItemType): void => {
+    setview(item);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Paper sx={{ padding: 2, minWidth: 500, width: "100%", overflow: "auto" }}>
+      <Stack spacing={2}>
+        <Stack
+          direction={"row"}
+          alignItems="center"
+          justifyContent={"space-between"}
+          width="100%"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <CustomMenu
+            caption={view.name}
+            onClickItem={onClickItem}
+            items={items}
+          />
+          <DatePicker
+            name="scheduleDate"
+            handleOnchange={(e) => setscheduleDate(new Date(e.target.value))}
+            value={scheduleDate}
+          />
+        </Stack>
+        <Scheduler
+          view={view.name}
+          apiData={apiData}
+          currentDay={scheduleDate}
+        />
+      </Stack>
+    </Paper>
   );
 }
 
