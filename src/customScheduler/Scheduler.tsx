@@ -3,21 +3,16 @@ import DayView from "./day/DayView";
 import MonthlyView from "./monthlyView/MonthlyView";
 import WeekViewScheduler from "./weekView/WeekViewScheduler";
 import { ApiDataObject, View } from "utils/types";
-/**
- * Props for Scheduler component
- *
- * @remarks
- * This interface defines the component prop types
 
- */
 interface Props {
   view: View;
   apiData: ApiDataObject[];
   currentDay: Date;
 }
 
-/**
- * Displays the different types of schedulers depending on value of view selected.
+/**Component that displays the currently selected view
+ * @description
+ * Displays the different types of schedulers depending on value of view selected using switch statement.
  * @param Props interface - The components props
  **/
 

@@ -11,6 +11,7 @@ import { daysOfThWeek } from "utils/utilFuncs";
 interface Props {
   apiData: ApiDataObject[];
   currentDay: Date;
+  defaultWeekDays: Date[];
 }
 /**
  * Parent component of the Weekly view
@@ -23,8 +24,8 @@ interface Props {
  * @param Props
  * @returns Jsx Element
  */
-function WeekViewScheduler({ apiData, currentDay }: Props) {
-  const [weekDays, setweekDays] = React.useState<Date[]>([]);
+function WeekViewScheduler({ apiData, currentDay, defaultWeekDays }: Props) {
+  const [weekDays, setweekDays] = React.useState<Date[]>(defaultWeekDays);
 
   React.useMemo(() => setweekDays(daysOfThWeek(currentDay)), [currentDay]);
   return (
@@ -52,5 +53,9 @@ function WeekViewScheduler({ apiData, currentDay }: Props) {
     </TableContainer>
   );
 }
+
+WeekViewScheduler.defaultProps = {
+  defaultWeekDays: daysOfThWeek(new Date()),
+};
 
 export default WeekViewScheduler;

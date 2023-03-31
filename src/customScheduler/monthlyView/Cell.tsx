@@ -37,6 +37,7 @@ const CellComponent = ({ weekDay, apiData }: Props): JSX.Element => {
       {cellDays.length ? (
         <React.Fragment>
           <Paper
+            id={`Month_cell_component_for_${weekDay}`}
             sx={{
               zIndex: 10,
 

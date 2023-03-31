@@ -41,6 +41,7 @@ const CellType = ({ interval, shifts }: Props): JSX.Element => {
         <>
           <React.Fragment>
             <Paper
+              id={`day_cell_for_${interval}`}
               sx={{
                 zIndex: 10,
                 position: "absolute",

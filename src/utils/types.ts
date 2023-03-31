@@ -123,3 +123,15 @@ export interface MenuItemType {
  * This type defines the shape of the view options for the custom menu
  */
 export type View = "Day" | "Week" | "Month";
+
+/**
+ * @remarks
+ * This interface defines the shape of the return value for the groupedBy utility function
+ */
+export interface GroupByType {
+  /**
+   * @property
+   * @type {array}
+   */
+  [key: string]: [];
+}

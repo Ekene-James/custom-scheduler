@@ -39,7 +39,10 @@ const MonthlyView = ({ apiData, currentDay }: Props): JSX.Element => {
   );
 
   return (
-    <Box sx={{ minWidth: 700, width: "100%", overflow: "hidden" }}>
+    <Box
+      sx={{ minWidth: 700, width: "100%", overflow: "hidden" }}
+      aria-label="month_view_component"
+    >
       <TableTop />
       <Grid
         container

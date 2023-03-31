@@ -69,7 +69,6 @@ const CustomModal = forwardRef(function Modal(props: Props, ref: Ref<RefType>) {
               position: "absolute",
               top: "1%",
               right: "2%",
-              // zIndex: 10000000,
             }}
           >
             <CloseIcon />

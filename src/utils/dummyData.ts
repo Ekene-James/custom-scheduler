@@ -4,10 +4,10 @@ export const apiData = [
   {
     id: 1,
     title: "Things Fall Apart",
-    startDate: new Date("3/22/2023"),
-    endDate: new Date("3/22/2023"),
+    startDate: new Date("3/30/2023"),
+    endDate: new Date("3/30/2023"),
     startTime: "19:00",
-    endTime: "20:00",
+    endTime: "19:45",
     clientImg:
       "/imgs/dog-golden-retriever-jumping-autumn-leaves-autumnal-sunlight-77861618.jpg",
     clientName: "Ajuri Alaka",

@@ -6,6 +6,7 @@ import DatePicker from "components/DatePicker";
 import CustomMenu from "components/CustomMenu";
 import { MenuItemType } from "utils/types";
 import "./App.css";
+
 const items: MenuItemType[] = [
   {
     name: "Day",
@@ -20,12 +21,14 @@ const items: MenuItemType[] = [
     value: "Month",
   },
 ];
-function App() {
+
+interface Props {
+  defaultView: MenuItemType;
+  items: MenuItemType[];
+}
+function App({ defaultView, items }: Props) {
   const [scheduleDate, setscheduleDate] = React.useState<Date>(new Date());
-  const [view, setview] = React.useState<MenuItemType>({
-    name: "Week",
-    value: "Week",
-  });
+  const [view, setview] = React.useState<MenuItemType>(defaultView);
   const onClickItem = (item: MenuItemType): void => {
     setview(item);
   };
@@ -58,5 +61,12 @@ function App() {
     </Paper>
   );
 }
+App.defaultProps = {
+  defaultView: {
+    name: "Week",
+    value: "Week",
+  },
+  items,
+};
 
 export default App;
