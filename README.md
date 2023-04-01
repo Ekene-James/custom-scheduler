@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Link to the live app
+
+[Live app](https://custom-scheduler.netlify.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
