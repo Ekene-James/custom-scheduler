@@ -74,7 +74,7 @@ const CellType = ({ interval, shifts }: Props): JSX.Element => {
             childrenContSx={{
               p: 3,
               height: "fit-content !important",
-              width: "40vw",
+              width: { xs: "100%", md: "40vw !important" },
             }}
             ariaLabel="day_modal"
           >

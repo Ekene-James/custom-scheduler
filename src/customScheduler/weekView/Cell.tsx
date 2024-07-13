@@ -69,7 +69,11 @@ const Cell = ({ weekDay, time, apiData }: Props) => {
               spacing={0.5}
               sx={{ maxHeight: "85%", overflowY: "auto" }}
             >
-              <Typography variant="subtitle2" fontWeight={"bold"}>
+              <Typography
+                variant="subtitle2"
+                fontWeight={"bold"}
+                fontSize={{ xs: "0.68rem", md: "0.9rem" }}
+              >
                 Appointments
               </Typography>
               {cellDay.map((dayDetails) => (
@@ -99,6 +103,7 @@ const Cell = ({ weekDay, time, apiData }: Props) => {
                       textOverflow: "ellipsis",
                       overflow: "hidden",
                     }}
+                    fontSize={{ xs: "0.6rem", md: "0.8rem" }}
                   >
                     {dayDetails.clientName}
                   </Typography>
@@ -112,7 +117,7 @@ const Cell = ({ weekDay, time, apiData }: Props) => {
               p: 3,
               pt: 5,
               height: "fit-content !important",
-              width: "40vw !important",
+              width: { xs: "100%", md: "40vw !important" },
             }}
             ariaLabel="week-view-cell"
           >

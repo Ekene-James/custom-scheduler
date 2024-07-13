@@ -110,7 +110,7 @@ const CellComponent = ({ weekDay, apiData }: Props): JSX.Element => {
               p: 3,
               pt: 4,
               height: "fit-content !important",
-              width: "40vw !important",
+              width: { xs: "100%", md: "40vw !important" },
             }}
             ariaLabel="month_view_modal"
           >
